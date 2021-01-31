@@ -1,0 +1,32 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    #MySQL配置
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://101.37.205.142:3306/gulimall_pms?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: zs2201
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    alicloud:
+      access-key: LTAI4Fy89sg3Sxnp41afE4jt
+      secret-key: PMgWt2vKeY4X12eueTxXcE7M15cLyP
+      oss:
+        endpoint: oss-cn-hangzhou.aliyuncs.com
+  application:
+    name: gulimall-product
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**/*.xml
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-value: 0 # 逻辑已删除值(默认为 1)
+      logic-not-delete-value: 1 # 逻辑未删除值(默认为 0)
+
+server:
+  port: 12000
+logging:
+  level:
+    com.gulimall: debug
